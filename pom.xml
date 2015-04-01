@@ -28,11 +28,11 @@
         </license>
     </licenses>
     <scm>
-        <url>https://devzendo@bitbucket.org/devzendo/group-parent-scala</url>
-        <connection>scm:hg:https://devzendo@bitbucket.org/devzendo/group-parent-scala
+        <url>https://bitbucket.org/devzendo/group-parent-scala</url>
+        <connection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala
         </connection>
         <developerConnection>
-            scm:hg:https://devzendo@bitbucket.org/devzendo/group-parent-scala
+            scm:hg:https://bitbucket.org/devzendo/group-parent-scala
         </developerConnection>
     </scm>
     <developers>
