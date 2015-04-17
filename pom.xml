@@ -53,13 +53,12 @@
         <scala.version>2.11.6</scala.version>
         <scalatest.scala.version>2.11</scalatest.scala.version> <!-- version 2.2.4 is current -->
         <scalacheck.scala.version>2.11</scalacheck.scala.version> <!-- version 1.12.2 is current -->
+        <parser.combinators.scala.version>2.11</parser.combinators.scala.version> <!-- version 1.0.3 is current -->
     </properties>
 
     <build>
-        <sourceDirectory>src/main/scala</sourceDirectory>
-        <testSourceDirectory>src/test/scala</testSourceDirectory>
-
         <plugins>
+
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
@@ -89,6 +88,18 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- The maven-compiler-plugin is getting invoked anyway, even if
+                 this isn't included, but we need to set our source version,
+                 mostly to help IDEs. -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
             </plugin>
 
             <plugin>
