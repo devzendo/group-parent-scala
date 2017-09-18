@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <description>The parent of all DevZendo.org Maven Scala projects
-        (Apache License v2) 2008-2015 Matt Gumbley, DevZendo.org
+        (Apache License v2) 2008-2017 Matt Gumbley, DevZendo.org
     </description>
 
     <url>http://www.devzendo.org/content/groupparentscala</url>
@@ -29,11 +29,8 @@
     </licenses>
     <scm>
         <url>https://bitbucket.org/devzendo/group-parent-scala</url>
-        <connection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala
-        </connection>
-        <developerConnection>
-            scm:hg:https://bitbucket.org/devzendo/group-parent-scala
-        </developerConnection>
+        <connection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala</connection>
+        <developerConnection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala</developerConnection>
     </scm>
     <developers>
         <developer>
@@ -43,15 +40,9 @@
         </developer>
     </developers>
 
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
-
     <properties>
-        <scala.version>2.11.6</scala.version>
-        <scalatest.scala.version>2.11</scalatest.scala.version> <!-- version 2.2.4 is current -->
+        <scala.version>2.11.7</scala.version>
+        <scalatest.scala.version>2.11</scalatest.scala.version> <!-- version 2.2.6 is current -->
         <scalacheck.scala.version>2.11</scalacheck.scala.version> <!-- version 1.12.2 is current -->
         <parser.combinators.scala.version>2.11</parser.combinators.scala.version> <!-- version 1.0.3 is current -->
     </properties>
@@ -62,7 +53,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.2.2</version>
                 <executions>
                     <execution>
                         <id>default-compile</id>
@@ -90,6 +81,30 @@
                 </executions>
             </plugin>
 
+            <!--
+            I added this at one stage, but it breaks the compilation of tests if they are written in scala
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.10</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/scala</source>
+                                <source>src/test/scala</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+
             <!-- The maven-compiler-plugin is getting invoked anyway, even if
                  this isn't included, but we need to set our source version,
                  mostly to help IDEs. -->
@@ -97,8 +112,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
