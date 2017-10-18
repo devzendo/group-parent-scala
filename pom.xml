@@ -8,6 +8,7 @@
     <artifactId>group-parent-scala</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>group-parent-scala</name>
 
     <description>The parent of all DevZendo.org Maven Scala projects
         (Apache License v2) 2008-2017 Matt Gumbley, DevZendo.org
@@ -27,11 +28,14 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <scm>
         <url>https://bitbucket.org/devzendo/group-parent-scala</url>
         <connection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala</connection>
         <developerConnection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala</developerConnection>
+        <tag>HEAD</tag>
     </scm>
+
     <developers>
         <developer>
             <id>matt.gumbley</id>
@@ -56,6 +60,7 @@
         <scalatest.scala.version>2.11</scalatest.scala.version> <!-- version 2.2.6 is current -->
         <scalacheck.scala.version>2.11</scalacheck.scala.version> <!-- version 1.12.2 is current -->
         <parser.combinators.scala.version>2.11</parser.combinators.scala.version> <!-- version 1.0.3 is current -->
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <build>
@@ -64,7 +69,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.3.1</version>
                 <executions>
                     <execution>
                         <id>default-compile</id>
@@ -88,6 +93,13 @@
                             <scalaVersion>${scala.version}</scalaVersion>
                             <sendJavaToScalac>true</sendJavaToScalac>
                         </configuration>
+                    </execution>
+                    <execution>
+                        <id>default-package</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>doc-jar</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
@@ -121,11 +133,45 @@
                  mostly to help IDEs. -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.7.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${maven.compiler.target}</source>
+                    <target>${maven.compiler.target}</target>
+                    <compilerArgs>
+                        <arg>-Xlint:unchecked</arg>
+                    </compilerArgs>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                        <configuration>
+                            <skipIfEmpty>true</skipIfEmpty>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
@@ -146,33 +192,46 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
+
         </plugins>
     </build>
 
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>scala-maven-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <scalaVersion>${scala.version}</scalaVersion>
-                </configuration>
-            </plugin>
+    <!-- The following plugins are only activated when building on the DevZendo.org CI server -->
+    <profiles>
+        <profile>
+            <id>ci</id>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.20.1</version>
-            </plugin>
+            <reporting>
+                <plugins>
+                    <plugin>
+                        <groupId>net.alchim31.maven</groupId>
+                        <artifactId>scala-maven-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <configuration>
+                            <scalaVersion>${scala.version}</scalaVersion>
+                        </configuration>
+                    </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.9</version>
-            </plugin>
-        </plugins>
-    </reporting>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-report-plugin</artifactId>
+                        <version>2.20.1</version>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-project-info-reports-plugin</artifactId>
+                        <version>2.9</version>
+                    </plugin>
+                </plugins>
+            </reporting>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
