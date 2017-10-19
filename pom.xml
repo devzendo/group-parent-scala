@@ -82,6 +82,10 @@
                         <configuration>
                             <scalaVersion>${scala.version}</scalaVersion>
                             <sendJavaToScalac>true</sendJavaToScalac>
+                            <args>
+                                <arg>-deprecation</arg>
+                                <arg>-feature</arg>
+                            </args>
                         </configuration>
                     </execution>
                     <execution>
@@ -93,6 +97,10 @@
                         <configuration>
                             <scalaVersion>${scala.version}</scalaVersion>
                             <sendJavaToScalac>true</sendJavaToScalac>
+                            <args>
+                                <arg>-deprecation</arg>
+                                <arg>-feature</arg>
+                            </args>
                         </configuration>
                     </execution>
                     <execution>
