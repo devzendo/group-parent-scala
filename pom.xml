@@ -85,6 +85,7 @@
                             <args>
                                 <arg>-deprecation</arg>
                                 <arg>-feature</arg>
+                                <arg>-language:implicitConversions</arg>
                             </args>
                         </configuration>
                     </execution>
@@ -100,6 +101,7 @@
                             <args>
                                 <arg>-deprecation</arg>
                                 <arg>-feature</arg>
+                                <arg>-language:implicitConversions</arg>
                             </args>
                         </configuration>
                     </execution>
