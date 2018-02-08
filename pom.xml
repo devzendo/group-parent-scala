@@ -85,6 +85,8 @@
                             <args>
                                 <arg>-deprecation</arg>
                                 <arg>-feature</arg>
+                                <!-- Would like to enable -Xexperimental for SAM types https://herringtondarkholme.github.io/2015/01/24/scala-sam/
+                                     but doing so breaks ScalaTest's use of eq/any argument matchers -->
                                 <arg>-language:implicitConversions</arg>
                             </args>
                         </configuration>
@@ -101,6 +103,8 @@
                             <args>
                                 <arg>-deprecation</arg>
                                 <arg>-feature</arg>
+                                <!-- Would like to enable -Xexperimental for SAM types https://herringtondarkholme.github.io/2015/01/24/scala-sam/
+                                     but doing so breaks ScalaTest's use of eq/any argument matchers -->
                                 <arg>-language:implicitConversions</arg>
                             </args>
                         </configuration>
