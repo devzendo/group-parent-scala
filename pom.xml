@@ -88,6 +88,9 @@
                                      but doing so breaks ScalaTest's use of eq/any argument matchers -->
                                 <arg>-language:implicitConversions</arg>
                             </args>
+                            <jvmArgs>
+                                <jvmArg>-Xss8m</jvmArg>
+                            </jvmArgs>
                         </configuration>
                     </execution>
                     <execution>
@@ -106,6 +109,9 @@
                                      but doing so breaks ScalaTest's use of eq/any argument matchers -->
                                 <arg>-language:implicitConversions</arg>
                             </args>
+                            <jvmArgs>
+                                <jvmArg>-Xss8m</jvmArg>
+                            </jvmArgs>
                         </configuration>
                     </execution>
                     <execution>
