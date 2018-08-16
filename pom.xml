@@ -89,7 +89,7 @@
                                 <arg>-language:implicitConversions</arg>
                             </args>
                             <jvmArgs>
-                                <jvmArg>-Xss8m</jvmArg>
+                                <jvmArg>-Xss10m</jvmArg>
                             </jvmArgs>
                         </configuration>
                     </execution>
@@ -110,7 +110,7 @@
                                 <arg>-language:implicitConversions</arg>
                             </args>
                             <jvmArgs>
-                                <jvmArg>-Xss8m</jvmArg>
+                                <jvmArg>-Xss10m</jvmArg>
                             </jvmArgs>
                         </configuration>
                     </execution>
