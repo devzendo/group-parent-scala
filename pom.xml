@@ -6,12 +6,12 @@
 
     <groupId>org.devzendo</groupId>
     <artifactId>group-parent-scala</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>group-parent-scala</name>
 
     <description>The parent of all DevZendo.org Maven Scala projects
-        (Apache License v2) 2008-2018 Matt Gumbley, DevZendo.org
+        (Apache License v2) 2008-2019 Matt Gumbley, DevZendo.org
     </description>
 
     <url>https://devzendo.github.io/dev/commons/</url>
