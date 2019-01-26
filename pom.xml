@@ -4,7 +4,7 @@
 
     <groupId>org.devzendo</groupId>
     <artifactId>group-parent-scala</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>group-parent-scala</name>
 
@@ -31,7 +31,7 @@
         <url>https://bitbucket.org/devzendo/group-parent-scala</url>
         <connection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala</connection>
         <developerConnection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala</developerConnection>
-        <tag>group-parent-scala-1.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
