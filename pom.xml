@@ -9,7 +9,7 @@
     <name>group-parent-scala</name>
 
     <description>The parent of all DevZendo.org Maven Scala projects
-        (Apache License v2) 2008-2019 Matt Gumbley, DevZendo.org
+        (Apache License v2) 2008-2020 Matt Gumbley, DevZendo.org
     </description>
 
     <url>https://devzendo.github.io/dev/commons/</url>
@@ -28,9 +28,9 @@
     </licenses>
 
     <scm>
-        <url>https://bitbucket.org/devzendo/group-parent-scala</url>
-        <connection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala</connection>
-        <developerConnection>scm:hg:https://bitbucket.org/devzendo/group-parent-scala</developerConnection>
+        <url>https://github.com/devzendo/group-parent-scala.git</url>
+        <connection>scm:git:https://github.com/devzendo/group-parent-scala.git</connection>
+        <developerConnection>scm:git:git@github.com:devzendo/group-parent-scala.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
