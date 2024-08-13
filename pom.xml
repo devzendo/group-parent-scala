@@ -4,12 +4,12 @@
 
     <groupId>org.devzendo</groupId>
     <artifactId>group-parent-scala</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>group-parent-scala</name>
 
     <description>The parent of all DevZendo.org Maven Scala projects
-        (Apache License v2) 2008-2022 Matt Gumbley, DevZendo.org
+        (Apache License v2) 2008-2024 Matt Gumbley, DevZendo.org
     </description>
 
     <url>https://devzendo.github.io/dev/commons/</url>
@@ -54,7 +54,7 @@
     </distributionManagement>
 
     <properties>
-        <scala.version>2.12.5</scala.version>
+        <scala.version>2.12.15</scala.version>
         <scalatest.scala.version>2.12</scalatest.scala.version> <!-- version 2.2.6 is current -->
         <scalacheck.scala.version>2.12</scalacheck.scala.version> <!-- version 1.12.2 is current -->
         <parser.combinators.scala.version>2.12</parser.combinators.scala.version> <!-- version 1.0.3 is current -->
@@ -242,7 +242,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.8</version>
+                        <version>1.6.13</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>sonatype-nexus-staging</serverId>
