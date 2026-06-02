@@ -9,7 +9,7 @@
     <name>group-parent-scala</name>
 
     <description>The parent of all DevZendo.org Maven Scala projects
-        (Apache License v2) 2008-2024 Matt Gumbley, DevZendo.org
+        (Apache License v2) 2008-2026 Matt Gumbley, DevZendo.org
     </description>
 
     <url>https://devzendo.github.io/dev/commons/</url>
@@ -44,12 +44,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>maven-snapshots</id>
+            <url>http://nexus.build.devzendo.org:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>sonatype-nexus-staging</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>devzendo</id>
+            <url>http://nexus.build.devzendo.org:8081/repository/devzendo/</url>
         </repository>
     </distributionManagement>
 
@@ -238,16 +238,31 @@
                             </execution>
                         </executions>
                     </plugin>
-
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>3.1.2</version>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
                         <version>1.6.13</version>
-                        <extensions>true</extensions>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                         <configuration>
-                            <serverId>sonatype-nexus-staging</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            <serverId>devzendo</serverId>
+                            <nexusUrl>http://nexus.build.devzendo.org:8081/nexus/</nexusUrl>
+                            <skipStaging>true</skipStaging>
                         </configuration>
                     </plugin>
                 </plugins>
