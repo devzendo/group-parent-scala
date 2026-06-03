@@ -54,7 +54,7 @@
     </distributionManagement>
 
     <properties>
-        <scala.version>2.12.15</scala.version>
+        <scala.version>2.12.21</scala.version>
         <scalatest.scala.version>2.12</scalatest.scala.version> <!-- version 2.2.6 is current -->
         <scalacheck.scala.version>2.12</scalacheck.scala.version> <!-- version 1.12.2 is current -->
         <parser.combinators.scala.version>2.12</parser.combinators.scala.version> <!-- version 1.0.3 is current -->
